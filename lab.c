@@ -7,6 +7,7 @@
 #define N_ESCRITORES 1
 
 sem_t mutex,mutex_e,escr,leit,fila;//todos iniciados em 1
+pthread_mutex_t mutex,mutex_e;
 int leitores = 0,fila_e = 0;
 
 
@@ -51,7 +52,6 @@ void* escritor(void* args)
 		fila_e++;
 		sem_post(&mutex_e);
 		if(fila_e==1) sem_wait(&fila);
-		sem_post(&mutex_e);
 
 		//bloqueio
 		sem_wait(&leit);
