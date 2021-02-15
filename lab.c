@@ -68,7 +68,6 @@ void* escritor(void* args)
 	}
 }
 
-
 int main()
 {
 	int l_ids[N_LEITORES],e_ids[N_ESCRITORES];
